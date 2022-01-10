@@ -38,7 +38,6 @@ def result_file():
 
 
 # Storing Queries for profile metrics
-def lambda_handler():
     glue = boto3.client('glue', region_name='us-east-1')
     Hmap = {}
     list_1 = []

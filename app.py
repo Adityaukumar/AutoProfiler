@@ -36,23 +36,11 @@ def result_file():
         (df['distinctcount']/df['TotalCount'])*100, 2)
     df.to_csv(S3_OUTPUT+'output1.csv')
 
-
-# Storing Queries for profile metrics
 def lambda_handler():
+# Storing Queries for profile metrics
     glue = boto3.client('glue', region_name='us-east-1')
     Hmap = {}
     list_1 = []
-    list_2 = []
-    list_3 = []
-    list_4 = []
-    list_5 = []
-    list_6 = []
-    list_7 = []
-    list_8 = []
-    list_9 = []
-    list_10 = []
-    list_11 = []
-    list_12 = []
 
     glue_table = glue.get_tables(DatabaseName=db_name, MaxResults=1000)
     for table in glue_table['TableList']:
